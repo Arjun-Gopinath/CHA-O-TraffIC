@@ -1,5 +1,5 @@
 extends KinematicBody2D
-
+var rng = RandomNumberGenerator.new()
 #if Input.is_action_pressed("ui_right"):
 #	motion.x = 100
 #elif Input.is_action_just_released("ui_right"):
@@ -19,8 +19,12 @@ extends KinematicBody2D
 #move_and_slide(motion)
 
 var motion = Vector2()
-var speed = 50
-
+var speed
+ 
+func _ready():
+	rng.randomize()
+	speed = rng.randf_range(10,100)
+	
 func _process(delta):
 	motion.x = speed 
 	move_and_slide(motion)
