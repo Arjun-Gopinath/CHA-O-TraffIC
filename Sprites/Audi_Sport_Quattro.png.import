@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Audi_Sport_Quattro.png-f87f0c4fb720c09c1fe7949c2ebce39f.stex"
+path="res://.import/Audi_Sport_Quattro.png-23ddc5d7d925638d3c39e7436b58e8ab.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Audi_Sport_Quattro.png"
-dest_files=[ "res://.import/Audi_Sport_Quattro.png-f87f0c4fb720c09c1fe7949c2ebce39f.stex" ]
+source_file="res://sprites/Audi_Sport_Quattro.png"
+dest_files=[ "res://.import/Audi_Sport_Quattro.png-23ddc5d7d925638d3c39e7436b58e8ab.stex" ]
 
 [params]
 

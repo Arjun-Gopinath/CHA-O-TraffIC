@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Police.png-4b67be3d3a8cce020343b040b794b4cd.stex"
+path="res://.import/Police.png-29426271715df9019f70c6b1aac40bd3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Police.png"
-dest_files=[ "res://.import/Police.png-4b67be3d3a8cce020343b040b794b4cd.stex" ]
+source_file="res://sprites/Police.png"
+dest_files=[ "res://.import/Police.png-29426271715df9019f70c6b1aac40bd3.stex" ]
 
 [params]
 

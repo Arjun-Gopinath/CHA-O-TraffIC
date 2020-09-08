@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Car_Audi_Sport_Quattro_Rally.png-f0211f94af56d85c5dadb1c57ecdb1c5.stex"
+path="res://.import/Car_Audi_Sport_Quattro_Rally.png-a49bc61a8bf85df2aab0a3193880cee5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Car_Audi_Sport_Quattro_Rally.png"
-dest_files=[ "res://.import/Car_Audi_Sport_Quattro_Rally.png-f0211f94af56d85c5dadb1c57ecdb1c5.stex" ]
+source_file="res://sprites/Car_Audi_Sport_Quattro_Rally.png"
+dest_files=[ "res://.import/Car_Audi_Sport_Quattro_Rally.png-a49bc61a8bf85df2aab0a3193880cee5.stex" ]
 
 [params]
 

@@ -5,6 +5,7 @@ var DOWN = []
 var LEFT = []
 var RIGHT = []
 
+# Vehicle scenes to spawn
 var cars = {"0" : "res://Scenes/Audi.tscn",
 			"1" : "res://Scenes/BMW.tscn",
 			"2" : "res://Scenes/Audi_2.tscn",
@@ -14,16 +15,19 @@ var cars = {"0" : "res://Scenes/Audi.tscn",
 			"6" : "res://Scenes/Ford.tscn",
 			"7" : "res://Scenes/Truck_A.tscn",
 			"8" : "res://Scenes/Truck_B.tscn"
-}#vehicle scenes to spawn
+}
+
 var direction = ["Left","Right","Up","Down"]
 
 var ROTATE = {"Left": PI/2,"Right" : -PI/2,"Up" : PI,"Down" : 0}#rotate sprite only dictionary
 
-var toggle_up = 1#for toggling
-var toggle_down = 1#the
-var toggle_left = 1#pausing of
-var toggle_right = 1#vehicle at certain position
+# Toggle Start/Stop of vehicle in specific road
+var toggle_up = 1
+var toggle_down = 1
+var toggle_left = 1
+var toggle_right = 1
 
+# Start Timer
 func _ready():
 	print(deg2rad(0.0))
 	$Timer.start()
@@ -42,11 +46,13 @@ func _on_Timer_timeout():
 		car.direction_to = temp_direction[0]
 		add_child(car)
 		temp_direction.remove(0)
-		
+
+# Update user input at each frame		
 func _process(delta):
 	get_input()
 
-func get_input():#inputs
+# User Input Function
+func get_input():
 	if Input.is_action_just_pressed("ui_up"):
 		if toggle_up==1:
 			UP = get_existing_cars("Up")
@@ -92,10 +98,12 @@ func get_input():#inputs
 			toggle_left = 1
 			LEFT.clear()
 
+# Vehicle entered screen
 func _on_Area2D_body_entered(body):
 	body.release = true
 	body.move = true
 
+# Exited vehicles
 func get_existing_cars(direction_name):
 	var children = get_children()
 	var children_cars = []
