@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://Spawn.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Spawn.gd" type="Script" id=2]
+[ext_resource path="res://sprites/go.png" type="Texture" id=3]
+[ext_resource path="res://roadEW.tga" type="Texture" id=4]
+[ext_resource path="res://roadNEWS.tga" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 63.5046, 63.7144 )
+extents = Vector2( 70.9927, 67.1268 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
@@ -14,31 +17,74 @@ position = Vector2( 360, 360 )
 
 [node name="Road_hor" type="Sprite" parent="ROAD"]
 self_modulate = Color( 0, 0, 0, 1 )
-scale = Vector2( 17.9085, 2 )
+scale = Vector2( 17.9085, 2.4 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ROAD/Road_hor"]
+position = Vector2( -0.0111809, -0.0571442 )
+scale = Vector2( 0.248854, 0.457444 )
+texture = ExtResource( 4 )
 
 [node name="Road_ver" type="Sprite" parent="ROAD"]
 self_modulate = Color( 0, 0, 0, 1 )
 rotation = 1.5708
-scale = Vector2( 16.9824, 2 )
+scale = Vector2( 16.9824, 2.64 )
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ROAD/Road_ver"]
+scale = Vector2( 0.248634, 0.437577 )
+texture = ExtResource( 4 )
+
+[node name="Road_Center" type="Sprite" parent="ROAD"]
+position = Vector2( 0, -3.12924e-05 )
+scale = Vector2( 1.16, 1.09912 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ROAD"]
 shape = SubResource( 1 )
 
 [node name="Left" type="Position2D" parent="."]
-position = Vector2( 0, 390 )
+position = Vector2( 0, 396.236 )
 
 [node name="Right" type="Position2D" parent="."]
-position = Vector2( 720, 330 )
+position = Vector2( 720, 319.309 )
 
 [node name="Up" type="Position2D" parent="."]
-position = Vector2( 390, 0 )
+position = Vector2( 398.909, 0 )
 
 [node name="Down" type="Position2D" parent="."]
-position = Vector2( 330, 720 )
+position = Vector2( 323.764, 720.891 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="LeftBlock" type="Sprite" parent="."]
+position = Vector2( 174.906, 359.904 )
+scale = Vector2( 0.242, 0.242 )
+texture = ExtResource( 3 )
+
+[node name="RightBlock" type="Sprite" parent="."]
+position = Vector2( 546.583, 358.222 )
+rotation = 3.14159
+scale = Vector2( 0.242, 0.242 )
+texture = ExtResource( 3 )
+
+[node name="DownBlock" type="Sprite" parent="."]
+position = Vector2( 359.904, 539.855 )
+rotation = -1.5708
+scale = Vector2( 0.242, 0.242 )
+texture = ExtResource( 3 )
+
+[node name="UpBlock" type="Sprite" parent="."]
+position = Vector2( 361.779, 185.191 )
+rotation = 1.5708
+scale = Vector2( 0.241817, 0.241817 )
+texture = ExtResource( 3 )
 [connection signal="body_entered" from="ROAD" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

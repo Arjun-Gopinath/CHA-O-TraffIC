@@ -23,12 +23,9 @@ func _process(delta):
 	if direction_to:
 		if move:
 			position += DIRECTIONS[direction_to] * speed * delta
-			var collision = move_and_collide(DIRECTIONS[direction_to])
-			if collision:
-				move = false
 # When vehicle is out of screen area
 func _on_VisibilityNotifier2D_screen_exited():
-	print("exited")
+	print("Collision biaatch")
 	queue_free()
 
 # Start/Stop the vehicle
@@ -46,9 +43,7 @@ func _on_Car_area_entered(area):
 		release = true
 	if (area.name.begins_with("Car") or area.name.begins_with("@Car")):
 		get_parent().game_quit()
-	
 		
-
 func _on_Car_Main_area_entered(area):
 	if(area.name == "ROAD"):
 		release = true
