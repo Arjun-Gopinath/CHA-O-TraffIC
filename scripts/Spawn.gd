@@ -41,6 +41,7 @@ func _on_Timer_timeout():
 		car = load(cars[str(randi() % cars.size())]).instance()
 		car.name = "Car"+scene
 		car.get_node("Sprite").rotation = ROTATE[scene]
+		car.get_node("CollisionShape2D").rotation = ROTATE[scene]
 		var position_node = get_node(scene)
 		car.position = position_node.position
 		car.direction_to = temp_direction[0]

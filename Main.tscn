@@ -9,6 +9,7 @@
 extents = Vector2( 111.054, 110.772 )
 
 [node name="Main" type="Node2D"]
+position = Vector2( -2.66968, 213.574 )
 script = ExtResource( 2 )
 
 [node name="ROAD" type="Area2D" parent="."]
@@ -40,12 +41,9 @@ __meta__ = {
 }
 
 [node name="roadEW" type="Sprite" parent="ROAD/Road_ver"]
-position = Vector2( -0.568928, 2.09542 )
-scale = Vector2( 0.989782, 1.80541 )
+position = Vector2( 0.220046, 2.09542 )
+scale = Vector2( 0.995946, 1.80541 )
 texture = ExtResource( 3 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Road_Center" type="Sprite" parent="ROAD"]
 position = Vector2( -1.12364, 0.0891024 )
@@ -57,16 +55,16 @@ position = Vector2( 512, 301.587 )
 shape = SubResource( 1 )
 
 [node name="Left" type="Position2D" parent="."]
-position = Vector2( 0, 270 )
+position = Vector2( 3.17839, 246.692 )
 
 [node name="Right" type="Position2D" parent="."]
-position = Vector2( 1024, 320 )
+position = Vector2( 1027.18, 348.606 )
 
 [node name="Up" type="Position2D" parent="."]
-position = Vector2( 542, 0 )
+position = Vector2( 566.427, -214.121 )
 
 [node name="Down" type="Position2D" parent="."]
-position = Vector2( 482, 600 )
+position = Vector2( 459.751, 810.833 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
