@@ -23,7 +23,9 @@ func _process(delta):
 	if direction_to:
 		if move:
 			position += DIRECTIONS[direction_to] * speed * delta
-
+			var collision = move_and_collide(DIRECTIONS[direction_to])
+			if collision:
+				move = false
 # When vehicle is out of screen area
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()

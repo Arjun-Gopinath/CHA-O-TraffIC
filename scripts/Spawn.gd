@@ -5,6 +5,14 @@ var DOWN = []
 var LEFT = []
 var RIGHT = []
 
+var block = preload("res://sprites/block.png")
+var go = preload("res://sprites/go.png")
+
+onready var LBlock = get_node("LeftBlock")
+onready var UBlock = get_node("UpBlock")
+onready var RBlock = get_node("RightBlock")
+onready var DBlock = get_node("DownBlock")
+
 # Vehicle scenes to spawn
 var cars = {"0" : "res://Scenes/Audi.tscn",
 			"1" : "res://Scenes/BMW.tscn",
@@ -41,6 +49,7 @@ func _on_Timer_timeout():
 		car = load(cars[str(randi() % cars.size())]).instance()
 		car.name = "Car"+scene
 		car.get_node("Sprite").rotation = ROTATE[scene]
+		car.get_node("CollisionShape2D").rotation = ROTATE[scene]
 		var position_node = get_node(scene)
 		car.position = position_node.position
 		car.direction_to = temp_direction[0]
@@ -48,7 +57,7 @@ func _on_Timer_timeout():
 		temp_direction.remove(0)
 
 # Update user input at each frame		
-func _process(delta):
+func _process(_delta):
 	get_input()
 
 # User Input Function
@@ -59,44 +68,52 @@ func get_input():
 			for i in UP:
 				i.stop_movement()
 			toggle_up = 0
+			UBlock.set_texture(block)	
 		else:
 			for i in UP:
 				i.restart_movement()
 			toggle_up = 1
 			UP.clear()
+			UBlock.set_texture(go)
 	elif Input.is_action_just_pressed("ui_down"):
 		if toggle_down==1:
 			DOWN = get_existing_cars("Down")
 			for i in DOWN:
 				i.stop_movement()
 			toggle_down = 0
+			DBlock.set_texture(block)
 		else:
 			for i in DOWN:
 				i.restart_movement()
 			toggle_down = 1
 			DOWN.clear()
+			DBlock.set_texture(go)
 	elif Input.is_action_just_pressed("ui_right"):
 		if toggle_right==1:
 			RIGHT = get_existing_cars("Right")
 			for i in RIGHT:
 				i.stop_movement()
 			toggle_right = 0
+			RBlock.set_texture(block)
 		else:
 			for i in RIGHT:
 				i.restart_movement()
 			toggle_right = 1
 			RIGHT.clear()
+			RBlock.set_texture(go)
 	elif Input.is_action_just_pressed("ui_left"):
 		if toggle_left==1:
 			LEFT = get_existing_cars("Left")
 			for i in LEFT:
 				i.stop_movement()
 			toggle_left = 0
+			LBlock.set_texture(block)
 		else:
 			for i in LEFT:
 				i.restart_movement()
 			toggle_left = 1
 			LEFT.clear()
+			LBlock.set_texture(go)
 
 # Vehicle entered screen
 func _on_Area2D_body_entered(body):

@@ -4,10 +4,13 @@
 [ext_resource path="res://Sprites/Truck_A.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 22.8026, 67.9468 )
+extents = Vector2( 22.8026, 76.6461 )
 
 [node name="Car" type="KinematicBody2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.45, 0.45 )
