@@ -25,7 +25,6 @@ var toggle_left = 1#pausing of
 var toggle_right = 1#vehicle at certain position
 
 func _ready():
-	print(deg2rad(0.0))
 	$Timer.start()
 
 func _on_Timer_timeout():
@@ -37,6 +36,7 @@ func _on_Timer_timeout():
 		car = load(cars[str(randi() % cars.size())]).instance()
 		car.name = "Car"+scene
 		car.get_node("Sprite").rotation = ROTATE[scene]
+		car.get_node("CollisionShape2D").rotation = ROTATE[scene]
 		var position_node = get_node(scene)
 		car.position = position_node.position
 		car.direction_to = temp_direction[0]
@@ -48,6 +48,7 @@ func _process(delta):
 
 func get_input():#inputs
 	if Input.is_action_just_pressed("ui_up"):
+		print(get_viewport().size)
 		if toggle_up==1:
 			UP = get_existing_cars("Up")
 			for i in UP:
@@ -104,3 +105,6 @@ func get_existing_cars(direction_name):
 			if !(i.release):
 				children_cars.append(i)
 	return children_cars
+
+func game_quit():
+	get_tree().quit()
