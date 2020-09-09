@@ -5,9 +5,11 @@ var DOWN = []
 var LEFT = []
 var RIGHT = []
 
+# block/go texture
 var block = preload("res://sprites/block.png")
 var go = preload("res://sprites/go.png")
 
+# Sprite for each direction's block notifier 
 onready var LBlock = get_node("LeftBlock")
 onready var UBlock = get_node("UpBlock")
 onready var RBlock = get_node("RightBlock")
