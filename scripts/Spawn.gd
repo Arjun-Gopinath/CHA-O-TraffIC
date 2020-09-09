@@ -5,6 +5,8 @@ var DOWN = []
 var LEFT = []
 var RIGHT = []
 
+var score 
+
 # block/go texture
 var block = preload("res://sprites/block.png")
 var go = preload("res://sprites/go.png")
@@ -40,6 +42,8 @@ var toggle_right = 1
 # Start Timer
 func _ready():
 	$Timer.start()
+	$ScoreCounter.start()
+	score = 0
 
 func _on_Timer_timeout():
 	var temp_direction = direction.duplicate()
@@ -133,4 +137,9 @@ func get_existing_cars(direction_name):
 	return children_cars
 
 func game_quit():
+	print(score)
 	get_tree().quit()
+
+
+func _on_ScoreCounter_timeout():
+	score+=1

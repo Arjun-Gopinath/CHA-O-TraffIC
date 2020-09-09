@@ -86,5 +86,8 @@ position = Vector2( 361.779, 185.191 )
 rotation = 1.5708
 scale = Vector2( 0.241817, 0.241817 )
 texture = ExtResource( 3 )
+
+[node name="ScoreCounter" type="Timer" parent="."]
 [connection signal="body_entered" from="ROAD" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="ScoreCounter" to="." method="_on_ScoreCounter_timeout"]

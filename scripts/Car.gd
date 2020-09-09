@@ -25,7 +25,6 @@ func _process(delta):
 			position += DIRECTIONS[direction_to] * speed * delta
 # When vehicle is out of screen area
 func _on_VisibilityNotifier2D_screen_exited():
-	print("Collision biaatch")
 	queue_free()
 
 # Start/Stop the vehicle
