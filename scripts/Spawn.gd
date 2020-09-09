@@ -39,7 +39,6 @@ var toggle_right = 1
 
 # Start Timer
 func _ready():
-	print(deg2rad(0.0))
 	$Timer.start()
 
 func _on_Timer_timeout():
@@ -65,6 +64,7 @@ func _process(_delta):
 # User Input Function
 func get_input():
 	if Input.is_action_just_pressed("ui_up"):
+		print(get_viewport().size)
 		if toggle_up==1:
 			UP = get_existing_cars("Up")
 			for i in UP:
@@ -131,3 +131,6 @@ func get_existing_cars(direction_name):
 			if !(i.release):
 				children_cars.append(i)
 	return children_cars
+
+func game_quit():
+	get_tree().quit()
