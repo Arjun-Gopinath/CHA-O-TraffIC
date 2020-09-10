@@ -44,9 +44,9 @@ margin_bottom = 324.0
 alignment = 1
 
 [node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 84.0
+margin_top = 94.0
 margin_right = 824.0
-margin_bottom = 150.0
+margin_bottom = 160.0
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/normal = ExtResource( 4 )
@@ -54,9 +54,9 @@ custom_fonts/font = SubResource( 2 )
 text = "START"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 174.0
+margin_top = 164.0
 margin_right = 824.0
-margin_bottom = 240.0
+margin_bottom = 230.0
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/normal = ExtResource( 4 )
