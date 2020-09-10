@@ -5,8 +5,9 @@ var DOWN = []
 var LEFT = []
 var RIGHT = []
 
-var score 
+var score
 
+var time = [0,0,0,0]
 # block/go texture
 var block = preload("res://sprites/block.png")
 var go = preload("res://sprites/go.png")
@@ -41,9 +42,9 @@ var toggle_right = 1
 
 # Start Timer
 func _ready():
+	score = 0
 	$Timer.start()
 	$ScoreCounter.start()
-	score = 0
 
 func _on_Timer_timeout():
 	var temp_direction = direction.duplicate()
@@ -63,6 +64,7 @@ func _on_Timer_timeout():
 
 # Update user input at each frame		
 func _process(_delta):
+	score+=_delta
 	get_input()
 
 # User Input Function
@@ -137,9 +139,20 @@ func get_existing_cars(direction_name):
 	return children_cars
 
 func game_quit():
-	print(score)
+	while score>60:
+		if score>3600:
+			time[0]+=1
+			score-=3600
+		elif score>60:
+			time[1]+=1
+			score-=60
+	time[2] = int(score)
+	score -= int(score)
+	time[3] = score
+	print("Time taken: " +str(time[0]) +" hours, "+ str(time[1]) +" minutes , " 
+	+ str(time[2]) +" seconds, "+ str(time[3]) +" milliseconds")
 	get_tree().quit()
 
 
 func _on_ScoreCounter_timeout():
-	score+=1
+	pass

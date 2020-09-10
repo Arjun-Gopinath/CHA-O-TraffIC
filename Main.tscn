@@ -13,7 +13,7 @@ extents = Vector2( 70.9927, 67.1268 )
 script = ExtResource( 2 )
 
 [node name="ROAD" type="Area2D" parent="."]
-position = Vector2( 360, 360 )
+position = Vector2( 506.151, 508.671 )
 
 [node name="Road_hor" type="Sprite" parent="ROAD"]
 self_modulate = Color( 0, 0, 0, 1 )
@@ -50,39 +50,39 @@ texture = ExtResource( 5 )
 shape = SubResource( 1 )
 
 [node name="Left" type="Position2D" parent="."]
-position = Vector2( 0, 396.236 )
+position = Vector2( 0, 471.831 )
 
 [node name="Right" type="Position2D" parent="."]
-position = Vector2( 720, 319.309 )
+position = Vector2( 1024, 467.98 )
 
 [node name="Up" type="Position2D" parent="."]
-position = Vector2( 398.909, 0 )
+position = Vector2( 547.58, 0 )
 
 [node name="Down" type="Position2D" parent="."]
-position = Vector2( 323.764, 720.891 )
+position = Vector2( 474.955, 1024 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 
 [node name="LeftBlock" type="Sprite" parent="."]
-position = Vector2( 174.906, 359.904 )
+position = Vector2( 321.057, 508.575 )
 scale = Vector2( 0.242, 0.242 )
 texture = ExtResource( 3 )
 
 [node name="RightBlock" type="Sprite" parent="."]
-position = Vector2( 546.583, 358.222 )
+position = Vector2( 692.734, 506.893 )
 rotation = 3.14159
 scale = Vector2( 0.242, 0.242 )
 texture = ExtResource( 3 )
 
 [node name="DownBlock" type="Sprite" parent="."]
-position = Vector2( 359.904, 539.855 )
+position = Vector2( 506.055, 688.526 )
 rotation = -1.5708
 scale = Vector2( 0.242, 0.242 )
 texture = ExtResource( 3 )
 
 [node name="UpBlock" type="Sprite" parent="."]
-position = Vector2( 361.779, 185.191 )
+position = Vector2( 507.93, 333.862 )
 rotation = 1.5708
 scale = Vector2( 0.241817, 0.241817 )
 texture = ExtResource( 3 )
