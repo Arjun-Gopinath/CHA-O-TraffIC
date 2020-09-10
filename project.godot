@@ -16,8 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="CHA-O Traffic"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://Start.tscn"
 config/icon="res://sprites/Logo.png"
+
+[autoload]
+
+Transition="*res://Scenes/Transition.tscn"
 
 [display]
 
