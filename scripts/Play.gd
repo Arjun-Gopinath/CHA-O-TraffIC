@@ -1,11 +1,16 @@
 extends Node
 
+var transition_node
+
 func _ready():
+	#made an instance for transition scene
+	transition_node = load("res://Scenes/Transition.tscn").instance()
 	pass
 
 
 func _on_Start_pressed():
-	Transition.fade_to("res://Main.tscn")
+	#transition scene node added
+	add_child(transition_node)
 
 
 func _on_Quit_pressed():

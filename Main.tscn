@@ -53,7 +53,7 @@ shape = SubResource( 1 )
 position = Vector2( 0, 471.831 )
 
 [node name="Right" type="Position2D" parent="."]
-position = Vector2( 1024, 467.98 )
+position = Vector2( 1025, 542.156 )
 
 [node name="Up" type="Position2D" parent="."]
 position = Vector2( 547.58, 0 )
