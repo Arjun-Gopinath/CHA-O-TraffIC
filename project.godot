@@ -19,6 +19,10 @@ config/name="CHA-O Traffic"
 run/main_scene="res://Start.tscn"
 config/icon="res://sprites/Logo.png"
 
+[autoload]
+
+SaveLoad="*res://scripts/SaveLoad.gd"
+
 [display]
 
 window/size/height=1024

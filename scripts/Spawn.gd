@@ -6,7 +6,7 @@ var LEFT = []
 var RIGHT = []
 
 var score
-
+var SCORE 
 var time = [0,0,0,0]
 # block/go texture
 var block = preload("res://sprites/block.png")
@@ -42,6 +42,7 @@ var toggle_right = 1
 
 # Start Timer
 func _ready():
+	SCORE = -5
 	score = 0
 	$Timer.start()
 	$ScoreCounter.start()
@@ -149,10 +150,13 @@ func game_quit():
 	time[2] = int(score)
 	score -= int(score)
 	time[3] = score
-	print("Time taken: " +str(time[0]) +" hours, "+ str(time[1]) +" minutes , " 
-	+ str(time[2]) +" seconds, "+ str(time[3]) +" milliseconds")
+#	print("Time taken: " +str(time[0]) +" hours, "+ str(time[1]) +" minutes , " 
+#	+ str(time[2]) +" seconds, "+ str(time[3]) +" milliseconds")
+#	print(SCORE," seconds")
+	SaveLoad._save_score(time[2],time[3])
 	get_tree().quit()
 
 
 func _on_ScoreCounter_timeout():
+	SCORE += 1
 	pass
