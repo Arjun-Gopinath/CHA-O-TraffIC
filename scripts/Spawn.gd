@@ -6,6 +6,8 @@ var LEFT = []
 var RIGHT = []
 
 var score 
+var current_next = [10,20]
+var wait_times = [2,3,4]
 
 var set_speed = 100
 var speed_test = 100
@@ -68,7 +70,19 @@ func _on_Timer_timeout():
 func _process(delta):
 	score += delta
 	get_input()
-	_speed_increase()
+	if score > current_next[0] and score <= 200:
+		_speed_increase(current_next[1])
+		current_next[0] = current_next[1]
+		current_next[1] = current_next[1] + 10
+	
+	if score > 30:
+		randomize()
+		$Timer.wait_time = wait_times[randi() % wait_times.size()]
+		print("wait time changed to ",$Timer.wait_time)
+	
+	if score  > 210:
+		randomize()
+		set_speed = rand_range(200,240)
 
 
 # User Input Function
@@ -142,34 +156,34 @@ func get_existing_cars(direction_name):
 	return children_cars
 
 func game_quit():
-#	while score>60:
-#		if score>3600:
-#			time[0]+=1
-#			score-=3600
-#		elif score>60:
-#			time[1]+=1
-#			score-=60
-#	time[2] = int(score)
-#	score -= int(score)
-#	time[3] = score
-
-#	print("Time taken: " +str(time[0]) +" hours, "+ str(time[1]) +" minutes , " 
-#	+ str(time[2]) +" seconds, "+ str(time[3]) +" milliseconds")
-
 	print(score," seconds")
 	SaveLoad._save_score(score)
 	get_tree().quit()
 
 
-func _speed_increase():
-	if score >= 10 and score < 15:
-		set_speed = 120
-	elif score >= 15 and score < 20:
-		set_speed = 140
-	elif score >= 20 and score < 30:
-		set_speed = 160
-	elif score >= 30 and score < 40:
-		set_speed = 180
-	elif score >= 40 and score < 50:
-		randomize()
-		set_speed = rand_range(200,230)
+func _speed_increase(score_sec):
+	randomize()
+	match score_sec:
+		20 : 
+			set_speed = 120
+		30 :
+			set_speed = 125
+			$Timer.wait_time = wait_times[randi() % wait_times.size()]
+		40 : 
+			set_speed = 130
+			$Timer.wait_time = wait_times[randi() % wait_times.size()]
+		50 :
+			set_speed = 135
+			$Timer.wait_time = wait_times[randi() % wait_times.size()]
+		60 : 
+			set_speed = 140
+			$Timer.wait_time = wait_times[randi() % wait_times.size()]
+		70 : 
+			set_speed = 150
+			$Timer.wait_time = wait_times[randi() % wait_times.size()]
+		80 : 
+			set_speed = 160
+			$Timer.wait_time = wait_times[randi() % wait_times.size()]
+		_ :
+			set_speed = int(rand_range(170,190))
+			$Timer.wait_time = wait_times[randi() % wait_times.size()]
