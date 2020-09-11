@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://sprites/Logo.png" type="Texture" id=1]
 [ext_resource path="res://sprites/fonts/BebasNeue-Regular.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://sprites/ButtonSprite/ButtonNormal.tres" type="StyleBox" id=4]
 [ext_resource path="res://scripts/Play.gd" type="Script" id=5]
 [ext_resource path="res://sounds/Track.wav" type="AudioStream" id=6]
+[ext_resource path="res://sprites/UIFrame.png" type="Texture" id=7]
+[ext_resource path="res://sprites/Grass.png" type="Texture" id=8]
 
 [sub_resource type="ShaderMaterial" id=1]
 
@@ -17,18 +19,30 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "move"
-length = 4.0
+length = 10.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Logo:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 35.0, 80.0, 125.0, 160.0, 205.0, 255.0, 300.0, 345.0, 395.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Background:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 36.0, 72.0, 108.0, 144.0, 180.0, 216.0, 252.0, 288.0, 324.0, 360.0 ]
 }
 
 [node name="StartScreen" type="Control"]
@@ -41,9 +55,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Grass" type="Sprite" parent="."]
+position = Vector2( 523.708, 522.689 )
+scale = Vector2( 1.01122, 1.0089 )
+texture = ExtResource( 8 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 520.873, 508.981 )
+rotation = 6.28319
+texture = ExtResource( 7 )
+
 [node name="Logo" type="Sprite" parent="."]
-position = Vector2( 504.681, 388.309 )
-rotation = 6.89405
+position = Vector2( 504.681, 490.581 )
+rotation = 0.610865
 scale = Vector2( 0.806824, 0.806824 )
 texture = ExtResource( 1 )
 
