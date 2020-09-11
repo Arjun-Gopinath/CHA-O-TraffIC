@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BMW.png-6e8cb1240c4b2c12cccf5d399c54f242.stex"
+path="res://.import/BMW.png-ae6ffc3dd084105c5462ca1e4e3032ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/BMW.png"
-dest_files=[ "res://.import/BMW.png-6e8cb1240c4b2c12cccf5d399c54f242.stex" ]
+source_file="res://sprites/BMW.png"
+dest_files=[ "res://.import/BMW.png-ae6ffc3dd084105c5462ca1e4e3032ca.stex" ]
 
 [params]
 

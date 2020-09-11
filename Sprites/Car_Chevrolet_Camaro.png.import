@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Car_Chevrolet_Camaro.png-5640204b953be1f8ba9dda6fc4e5c847.stex"
+path="res://.import/Car_Chevrolet_Camaro.png-e5243856011bf8513cade844b5066fdf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Car_Chevrolet_Camaro.png"
-dest_files=[ "res://.import/Car_Chevrolet_Camaro.png-5640204b953be1f8ba9dda6fc4e5c847.stex" ]
+source_file="res://sprites/Car_Chevrolet_Camaro.png"
+dest_files=[ "res://.import/Car_Chevrolet_Camaro.png-e5243856011bf8513cade844b5066fdf.stex" ]
 
 [params]
 

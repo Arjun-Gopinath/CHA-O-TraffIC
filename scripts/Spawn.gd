@@ -142,25 +142,11 @@ func get_existing_cars(direction_name):
 	return children_cars
 
 func game_quit():
-#	while score>60:
-#		if score>3600:
-#			time[0]+=1
-#			score-=3600
-#		elif score>60:
-#			time[1]+=1
-#			score-=60
-#	time[2] = int(score)
-#	score -= int(score)
-#	time[3] = score
-
-#	print("Time taken: " +str(time[0]) +" hours, "+ str(time[1]) +" minutes , " 
-#	+ str(time[2]) +" seconds, "+ str(time[3]) +" milliseconds")
-
 	print(score," seconds")
 	SaveLoad._save_score(score)
 	get_tree().quit()
 
-
+# Increase Speed based on score
 func _speed_increase():
 	if score >= 10 and score < 15:
 		set_speed = 120
