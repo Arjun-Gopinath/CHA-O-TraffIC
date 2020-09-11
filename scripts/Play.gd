@@ -4,7 +4,7 @@ var transition_node
 
 func _ready():
 	var score = SaveLoad.load_game_score()
-	print(score[0]+score[1]," Seconds ")
+	print(score," Seconds ")
 	#made an instance for transition scene
 	transition_node = load("res://Scenes/Transition.tscn").instance()
 	pass

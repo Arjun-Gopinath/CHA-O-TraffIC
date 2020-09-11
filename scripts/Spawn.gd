@@ -5,8 +5,11 @@ var DOWN = []
 var LEFT = []
 var RIGHT = []
 
-var score
-var SCORE 
+var score 
+
+var set_speed = 100
+var speed_test = 100
+
 var time = [0,0,0,0]
 # block/go texture
 var block = preload("res://sprites/block.png")
@@ -42,10 +45,8 @@ var toggle_right = 1
 
 # Start Timer
 func _ready():
-	SCORE = -5
-	score = 0
+	score = -5
 	$Timer.start()
-	$ScoreCounter.start()
 
 func _on_Timer_timeout():
 	var temp_direction = direction.duplicate()
@@ -63,15 +64,16 @@ func _on_Timer_timeout():
 		add_child(car)
 		temp_direction.remove(0)
 
-# Update user input at each frame		
-func _process(_delta):
-	score+=_delta
+# Update user input at each frame
+func _process(delta):
+	score += delta
 	get_input()
+	_speed_increase()
+
 
 # User Input Function
 func get_input():
 	if Input.is_action_just_pressed("ui_up"):
-		print(get_viewport().size)
 		if toggle_up==1:
 			UP = get_existing_cars("Up")
 			for i in UP:
@@ -140,23 +142,34 @@ func get_existing_cars(direction_name):
 	return children_cars
 
 func game_quit():
-	while score>60:
-		if score>3600:
-			time[0]+=1
-			score-=3600
-		elif score>60:
-			time[1]+=1
-			score-=60
-	time[2] = int(score)
-	score -= int(score)
-	time[3] = score
+#	while score>60:
+#		if score>3600:
+#			time[0]+=1
+#			score-=3600
+#		elif score>60:
+#			time[1]+=1
+#			score-=60
+#	time[2] = int(score)
+#	score -= int(score)
+#	time[3] = score
+
 #	print("Time taken: " +str(time[0]) +" hours, "+ str(time[1]) +" minutes , " 
 #	+ str(time[2]) +" seconds, "+ str(time[3]) +" milliseconds")
-#	print(SCORE," seconds")
-	SaveLoad._save_score(time[2],time[3])
+
+	print(score," seconds")
+	SaveLoad._save_score(score)
 	get_tree().quit()
 
 
-func _on_ScoreCounter_timeout():
-	SCORE += 1
-	pass
+func _speed_increase():
+	if score >= 10 and score < 15:
+		set_speed = 120
+	elif score >= 15 and score < 20:
+		set_speed = 140
+	elif score >= 20 and score < 30:
+		set_speed = 160
+	elif score >= 30 and score < 40:
+		set_speed = 180
+	elif score >= 40 and score < 50:
+		randomize()
+		set_speed = rand_range(200,230)
