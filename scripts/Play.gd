@@ -3,12 +3,11 @@ extends Node
 var transition_node
 
 func _ready():
+	get_node("AnimationPlayer").play("move")
 	var score = SaveLoad.load_game_score()
 	print("Saved Score : ",score," Seconds ")
-	#made an instance for transition scene
-	transition_node = load("res://Scenes/Transition.tscn").instance()
+	transition_node = load("res://Scenes/Transition.tscn").instance() #made an instance for transition scene
 	pass
-
 
 func _on_Start_pressed():
 	#transition scene node added

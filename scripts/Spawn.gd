@@ -8,11 +8,8 @@ var RIGHT = []
 var score 
 var current_next = [10,20]
 var wait_times = [2,3,4]
-
 var set_speed = 100
-var speed_test = 100
 
-var time = [0,0,0,0]
 # block/go texture
 var block = preload("res://sprites/block.png")
 var go = preload("res://sprites/go.png")
@@ -74,16 +71,6 @@ func _process(delta):
 		_speed_increase(current_next[1])
 		current_next[0] = current_next[1]
 		current_next[1] = current_next[1] + 10
-	
-	if score > 30:
-		randomize()
-		$Timer.wait_time = wait_times[randi() % wait_times.size()]
-		print("wait time changed to ",$Timer.wait_time)
-	
-	if score  > 210:
-		randomize()
-		set_speed = rand_range(200,240)
-
 
 # User Input Function
 func get_input():
@@ -160,7 +147,6 @@ func game_quit():
 	SaveLoad._save_score(score)
 	get_tree().quit()
 
-
 func _speed_increase(score_sec):
 	randomize()
 	match score_sec:
@@ -187,3 +173,4 @@ func _speed_increase(score_sec):
 		_ :
 			set_speed = int(rand_range(170,190))
 			$Timer.wait_time = wait_times[randi() % wait_times.size()]
+
