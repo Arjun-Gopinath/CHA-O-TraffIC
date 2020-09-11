@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Car_Lancia_Delta_Integrale_Yellow_86x145.png-7ead4233756d8e90fe7646fba28afb39.stex"
+path="res://.import/Car_Lancia_Delta_Integrale_Yellow_86x145.png-8448ecfb0a9901e4aef2fc8fd6ee09da.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Car_Lancia_Delta_Integrale_Yellow_86x145.png"
-dest_files=[ "res://.import/Car_Lancia_Delta_Integrale_Yellow_86x145.png-7ead4233756d8e90fe7646fba28afb39.stex" ]
+source_file="res://sprites/Car_Lancia_Delta_Integrale_Yellow_86x145.png"
+dest_files=[ "res://.import/Car_Lancia_Delta_Integrale_Yellow_86x145.png-8448ecfb0a9901e4aef2fc8fd6ee09da.stex" ]
 
 [params]
 
