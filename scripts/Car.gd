@@ -1,9 +1,10 @@
 extends Area2D
 
 var direction_to = Vector2()
+var pos = Vector2() 
 
 #Initial Speed of Vehicle
-var speed = 100#100-200
+var speed = 100 #100-200
 
 var release : bool = false  #if true , car crossed or crossing the junction
 
@@ -41,7 +42,7 @@ func _on_Car_area_entered(area):
 		move = true
 	
 	if (area.name.begins_with("Car") or area.name.begins_with("@Car")):
-		get_parent().game_quit()
+		get_parent().game_quit(area.position)
 	
 func _on_Car_Main_area_entered(area):
 	if(area.name == "ROAD"):
@@ -49,4 +50,5 @@ func _on_Car_Main_area_entered(area):
 		move = true
 	
 	if (area.name.begins_with("Car") or area.name.begins_with("@Car")):
-		get_parent().game_quit()
+		# Get Position of car on collision-> store in pos
+		get_parent().game_quit(area.position)

@@ -20,6 +20,8 @@ onready var UBlock = get_node("UpBlock")
 onready var RBlock = get_node("RightBlock")
 onready var DBlock = get_node("DownBlock")
 
+# Explode Sprite
+onready var explode = load("res://Scenes/Explode.tscn").instance()
 # Vehicle scenes to spawn
 var cars = {"0" : "res://Scenes/Audi.tscn",
 			"1" : "res://Scenes/BMW.tscn",
@@ -142,7 +144,9 @@ func get_existing_cars(direction_name):
 				children_cars.append(i)
 	return children_cars
 
-func game_quit():
+func game_quit(pos):
+	explode.set_position(pos)
+	add_child(explode)
 	print(score," seconds")
 	SaveLoad._save_score(score)
 	get_tree().quit()
