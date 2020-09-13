@@ -155,6 +155,7 @@ func game_quit(pos):
 	var explode = load("res://Scenes/Explode.tscn").instance()
 	explode.set_position(pos)
 	add_child(explode)
+#	get_tree().quit()
 	print(score," seconds")
 	SaveLoad._save_score(score)
 	get_tree().quit()
