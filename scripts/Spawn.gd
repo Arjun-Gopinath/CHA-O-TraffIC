@@ -47,6 +47,8 @@ var toggle_down = 1
 var toggle_left = 1
 var toggle_right = 1
 
+var state = true
+
 # Start Timer
 func _ready():
 	score = -5
@@ -81,7 +83,11 @@ func _process(delta):
 func get_input():
 	if Input.is_action_just_pressed("pause"):
 		var pause = load("res://Scenes/Pause.tscn").instance()
-		add_child(pause)
+		if state:
+			add_child(pause)
+			state = false
+		else:
+			state = true
 	
 	if Input.is_action_just_pressed("ui_up"):
 		if toggle_up==1:

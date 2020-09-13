@@ -20,25 +20,14 @@ font_data = ExtResource( 2 )
 [sub_resource type="Animation" id=3]
 resource_name = "move"
 length = 10.0
+loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Logo:rotation_degrees")
+tracks/0/path = NodePath("Background:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ 35.0, 80.0, 125.0, 160.0, 205.0, 255.0, 300.0, 345.0, 395.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Background:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
@@ -62,7 +51,6 @@ texture = ExtResource( 8 )
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 520.873, 508.981 )
-rotation = 6.28319
 texture = ExtResource( 7 )
 
 [node name="Logo" type="Sprite" parent="."]
@@ -87,9 +75,9 @@ margin_bottom = 324.0
 alignment = 1
 
 [node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 94.0
+margin_top = 59.0
 margin_right = 824.0
-margin_bottom = 160.0
+margin_bottom = 125.0
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/normal = ExtResource( 4 )
@@ -97,15 +85,26 @@ custom_fonts/font = SubResource( 2 )
 text = "START"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 164.0
+margin_top = 129.0
 margin_right = 824.0
-margin_bottom = 230.0
+margin_bottom = 195.0
 custom_styles/hover = ExtResource( 3 )
 custom_styles/pressed = ExtResource( 4 )
 custom_styles/normal = ExtResource( 4 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_disabled = Color( 0.517647, 0.054902, 0.054902, 1 )
 text = "quit"
+
+[node name="Controls" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_top = 199.0
+margin_right = 824.0
+margin_bottom = 265.0
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_disabled = Color( 0.517647, 0.054902, 0.054902, 1 )
+text = "options"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2( 528.008, 504.224 )
@@ -116,3 +115,4 @@ autoplay = true
 anims/move = SubResource( 3 )
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Controls" to="." method="_on_Controls_pressed"]
