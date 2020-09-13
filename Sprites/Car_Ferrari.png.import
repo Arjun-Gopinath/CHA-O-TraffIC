@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Car_Ferrari.png-6291b69468b85aeb14f449ece2a8682f.stex"
+path="res://.import/Car_Ferrari.png-d7ca5cc940d26fd289b736ff8c5902cc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Car_Ferrari.png"
-dest_files=[ "res://.import/Car_Ferrari.png-6291b69468b85aeb14f449ece2a8682f.stex" ]
+source_file="res://sprites/Car_Ferrari.png"
+dest_files=[ "res://.import/Car_Ferrari.png-d7ca5cc940d26fd289b736ff8c5902cc.stex" ]
 
 [params]
 
