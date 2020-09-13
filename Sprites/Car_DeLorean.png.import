@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Car_DeLorean.png-4930ba81e3acc2377126d6b80fe4312e.stex"
+path="res://.import/Car_DeLorean.png-86ec3ce2fee78fecf0dcd6d0243ba8c1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Car_DeLorean.png"
-dest_files=[ "res://.import/Car_DeLorean.png-4930ba81e3acc2377126d6b80fe4312e.stex" ]
+source_file="res://sprites/Car_DeLorean.png"
+dest_files=[ "res://.import/Car_DeLorean.png-86ec3ce2fee78fecf0dcd6d0243ba8c1.stex" ]
 
 [params]
 

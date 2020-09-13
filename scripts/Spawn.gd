@@ -22,6 +22,8 @@ onready var DBlock = get_node("DownBlock")
 
 # Explode Sprite
 #onready var explode = load("res://Scenes/Explode.tscn").instance()
+var pause = load("res://Scenes/Pause.tscn").instance()
+var new_state = true
 
 # Vehicle scenes to spawn
 var cars = {"0" : "res://Scenes/Audi.tscn",
@@ -77,6 +79,12 @@ func _process(delta):
 
 # User Input Function
 func get_input():
+	if Input.is_action_just_pressed("pause"):
+		if new_state:
+			add_child(pause)
+		else:
+			remove_child(pause)
+		new_state = not new_state
 	if Input.is_action_just_pressed("ui_up"):
 		if toggle_up==1:
 			UP = get_existing_cars("Up")
@@ -129,7 +137,6 @@ func get_input():
 			toggle_left = 1
 			LEFT.clear()
 			LBlock.set_texture(go)
-
 # Vehicle entered screen
 func _on_Area2D_body_entered(body):
 	body.release = true
