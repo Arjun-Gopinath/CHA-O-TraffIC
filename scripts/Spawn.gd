@@ -22,6 +22,7 @@ onready var DBlock = get_node("DownBlock")
 
 # Explode Sprite
 onready var explode = load("res://Scenes/Explode.tscn").instance()
+
 # Vehicle scenes to spawn
 var cars = {"0" : "res://Scenes/Audi.tscn",
 			"1" : "res://Scenes/BMW.tscn",
