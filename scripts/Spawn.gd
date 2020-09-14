@@ -164,6 +164,7 @@ func game_quit(pos):
 	explode.set_position(pos)
 	add_child(explode)
 	print(score," seconds")
+	SaveLoad.add_latest_score(score)
 	SaveLoad._save_score(score)
 	add_child(replay)
 

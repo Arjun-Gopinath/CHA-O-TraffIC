@@ -3,10 +3,15 @@ extends Node
 var transition_node
 #var controlnode
 
+onready var hiscore = get_node("MarginContainer2/ColorRect/ScoreText")
+onready var score = SaveLoad.load_game_score()
+
 func _ready():
 	get_node("AnimationPlayer").play("move")
-	var score = SaveLoad.load_game_score()
-	print("Saved Score : ",score," Seconds ")
+	if score==0:
+		hiscore.text = "FIRST TIME ??? HUH..."
+	else:
+		hiscore.text = "HIGH SCORE : " + str(score) + " SEC"
 	transition_node = load("res://Scenes/Transition.tscn").instance() #made an instance for transition scene
 	pass
 

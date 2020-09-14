@@ -3,6 +3,8 @@ extends Node
 var location = "user://save.data"
 var load_score
 
+var latestscore
+
 var password = "odiyan"
 #var password = "odiyan"
 func _save_score(sec):
@@ -58,3 +60,9 @@ func check_score(current_score,saved_score):
 	if(current_score > saved_score):
 		return current_score
 	return saved_score
+
+func add_latest_score(s):
+	latestscore = s
+
+func get_latest_score():
+	return latestscore	
