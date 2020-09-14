@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Lancia_Delta.png-5e13dadca01d8ab01d3ca6cf3cb48fd8.stex"
+path="res://.import/Lancia_Delta.png-2936e5dc76c23905a08e49947fc6eadf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Lancia_Delta.png"
-dest_files=[ "res://.import/Lancia_Delta.png-5e13dadca01d8ab01d3ca6cf3cb48fd8.stex" ]
+source_file="res://sprites/Lancia_Delta.png"
+dest_files=[ "res://.import/Lancia_Delta.png-2936e5dc76c23905a08e49947fc6eadf.stex" ]
 
 [params]
 

@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var text1 = "TRY AGAIN \nYOU ARE NOT BE THE ONE THIS JUNCTION NEEDS...\nYOU ARE THE ONE THIS JUNCTION DESERVES...."
+var text1 = "TRY AGAIN \nYOU ARE NOT THE ONE THIS JUNCTION NEEDS...\nBUT THE ONE THIS JUNCTION DESERVES...."
 var text2 = "WELL DONE MY BOII... WELL DONE, BEAT YOURSELF NOW, AI??"
 
 onready var newscore = get_node("Control/MarginContainer/VBoxContainer/Score")
