@@ -14,12 +14,13 @@ func _ready():
 		get_node("Control/MarginContainer/VBoxContainer/Score2").text = text2
 	else:
 		get_node("Control/MarginContainer/VBoxContainer/Score2").text = text1
-	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 func _on_Replay_pressed():
 	get_tree().reload_current_scene()
+	get_tree().paused = false
+	queue_free()
+
+func _on_MainMenu_pressed():
+	get_tree().change_scene("res://Start.tscn")
 	get_tree().paused = false
 	queue_free()

@@ -5,9 +5,10 @@ var DOWN = []
 var LEFT = []
 var RIGHT = []
 
-var score 
+var score #score counter
 var current_next = [10,20]
 var wait_times = [2,3,4]
+
 var set_speed = 100
 
 # block/go texture
@@ -20,11 +21,6 @@ onready var UBlock = get_node("UpBlock")
 onready var RBlock = get_node("RightBlock")
 onready var DBlock = get_node("DownBlock")
 
-
-# Explode Sprite
-#onready var explode = load("res://Scenes/Explode.tscn").instance()
-#var pause = load("res://Scenes/Pause.tscn").instance()
-#var new_state = true
 
 # Vehicle scenes to spawn
 var cars = {"0" : "res://Scenes/Audi.tscn",
@@ -40,7 +36,7 @@ var cars = {"0" : "res://Scenes/Audi.tscn",
 
 var direction = ["Left","Right","Up","Down"]
 
-var ROTATE = {"Left": PI/2,"Right" : -PI/2,"Up" : PI,"Down" : 0}#rotate sprite only dictionary
+var ROTATE = {"Left": PI/2,"Right" : -PI/2,"Up" : PI,"Down" : 0}# to rotate sprite and collision
 
 # Toggle Start/Stop of vehicle in specific road
 var toggle_up = 1
@@ -48,14 +44,14 @@ var toggle_down = 1
 var toggle_left = 1
 var toggle_right = 1
 
-var state = true
+var state = true#to detect pause
 
 # Start Timer
 func _ready():
 	score = -5
 	$Timer.start()
 
-func _on_Timer_timeout():
+func _on_Timer_timeout(): #to spawn vehicles
 	var temp_direction = direction.duplicate()
 	var car
 	for i in direction.size():
@@ -71,18 +67,17 @@ func _on_Timer_timeout():
 		add_child(car)
 		temp_direction.remove(0)
 
-# Update user input at each frame
 func _process(delta):
-	score += delta
-	get_input()
-	if score > current_next[0] and score <= 200:
+	score += delta #scoring
+	get_input()# Update user input at each frame
+	if score > current_next[0] and score <= 200: #speed controller according to score
 		_speed_increase(current_next[1])
 		current_next[0] = current_next[1]
 		current_next[1] = current_next[1] + 10
 
 # User Input Function
 func get_input():
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause"): #if p is pressed
 		var pause = load("res://Scenes/Pause.tscn").instance()
 		if state:
 			add_child(pause)
@@ -149,16 +144,16 @@ func _on_Area2D_body_entered(body):
 	body.move = true
 
 # Exited vehicles
-func get_existing_cars(direction_name):
+func get_existing_cars(direction_name): #get current running vehicles in given direction
 	var children = get_children()
 	var children_cars = []
 	for i in children:
 		if i.name.begins_with("@Car"+direction_name) or i.name.begins_with("Car"+direction_name):
-			if !(i.release):
+			if !(i.release): #if car not crossed the junction
 				children_cars.append(i)
 	return children_cars
 
-func game_quit(pos):
+func game_quit(pos): #quit or replay
 	var explode = load("res://Scenes/Explode.tscn").instance()
 	var replay = load("res://Scenes/Replay.tscn").instance()
 	explode.set_position(pos)
@@ -168,7 +163,7 @@ func game_quit(pos):
 	SaveLoad._save_score(score)
 	add_child(replay)
 
-func _speed_increase(score_sec):
+func _speed_increase(score_sec): #updating the speed and spawn timer according to score
 	randomize()
 	match score_sec:
 		20 : 
