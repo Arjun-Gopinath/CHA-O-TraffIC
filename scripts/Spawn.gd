@@ -163,7 +163,6 @@ func game_quit(pos):
 	var replay = load("res://Scenes/Replay.tscn").instance()
 	explode.set_position(pos)
 	add_child(explode)
-#	get_tree().quit()
 	print(score," seconds")
 	SaveLoad._save_score(score)
 	add_child(replay)
