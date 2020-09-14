@@ -20,6 +20,7 @@ onready var UBlock = get_node("UpBlock")
 onready var RBlock = get_node("RightBlock")
 onready var DBlock = get_node("DownBlock")
 
+
 # Explode Sprite
 #onready var explode = load("res://Scenes/Explode.tscn").instance()
 #var pause = load("res://Scenes/Pause.tscn").instance()
@@ -159,12 +160,13 @@ func get_existing_cars(direction_name):
 
 func game_quit(pos):
 	var explode = load("res://Scenes/Explode.tscn").instance()
+	var replay = load("res://Scenes/Replay.tscn").instance()
 	explode.set_position(pos)
 	add_child(explode)
 #	get_tree().quit()
 	print(score," seconds")
 	SaveLoad._save_score(score)
-	get_tree().quit()
+	add_child(replay)
 
 func _speed_increase(score_sec):
 	randomize()
