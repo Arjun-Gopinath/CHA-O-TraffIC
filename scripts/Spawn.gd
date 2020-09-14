@@ -35,7 +35,7 @@ var cars = {"0" : "res://Scenes/Audi.tscn",
 			"5" : "res://Scenes/Ferrari.tscn",
 			"6" : "res://Scenes/Ford.tscn",
 			"7" : "res://Scenes/Truck_A.tscn",
-			"8" : "res://Scenes/Truck_B.tscn"
+			"8" : "res://Scenes/Truck_C.tscn"
 }
 
 var direction = ["Left","Right","Up","Down"]
