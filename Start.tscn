@@ -97,7 +97,7 @@ custom_styles/pressed = ExtResource( 4 )
 custom_styles/normal = ExtResource( 4 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_disabled = Color( 0.517647, 0.054902, 0.054902, 1 )
-text = "options"
+text = "HELP"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 margin_top = 199.0
