@@ -8,27 +8,19 @@ onready var hscore = get_node("Control/MarginContainer/VBoxContainer/high")
 
 func _ready():
 	get_tree().paused=true
-	newscore.align = 1
-	newscore.valign = 1
-	hscore.align = 1
-	hscore.valign = 1
-	hscore.text = "HIGHSCORE : "+ str(SaveLoad.load_game_score()) + " sec"
-	newscore.text = "SCORE : " + str(SaveLoad.get_latest_score()) + " sec"
+	hscore.text += str(SaveLoad.load_game_score()) + " sec\n"
+	newscore.text += str(SaveLoad.get_latest_score()) + " sec\n"
 	if SaveLoad.get_latest_score()>=SaveLoad.load_game_score():
 		get_node("Control/MarginContainer/VBoxContainer/Score2").text = text2
 	else:
 		get_node("Control/MarginContainer/VBoxContainer/Score2").text = text1
 
 func _on_Replay_pressed():
-	if get_tree().reload_current_scene() != 0:
-		get_tree().quit()
-	else:
-		get_tree().paused = false
-		queue_free()
+	get_tree().reload_current_scene()
+	get_tree().paused = false
+	queue_free()
 
 func _on_MainMenu_pressed():
-	if get_tree().change_scene("res://Start.tscn") != 0:
-		get_tree().quit()
-	else:
-		get_tree().paused = false
-		queue_free()
+	get_tree().change_scene("res://Start.tscn")
+	get_tree().paused = false
+	queue_free()
