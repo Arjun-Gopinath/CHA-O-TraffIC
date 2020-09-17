@@ -25,7 +25,11 @@ SaveLoad="*res://scripts/SaveLoad.gd"
 
 [display]
 
-window/size/height=1024
+window/size/width=1080
+window/size/height=1920
+window/size/test_width=360
+window/size/test_height=640
+window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

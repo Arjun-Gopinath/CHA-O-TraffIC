@@ -6,21 +6,13 @@
 [ext_resource path="res://sprites/return_to_start.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 40
+size = 35
 font_data = ExtResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer"]
 pause_mode = 2
 layer = 3
 script = ExtResource( 3 )
-
-[node name="ColorRect" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.00784314, 0.00784314, 0.00784314, 0.556863 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Control" type="Control" parent="."]
 anchor_right = 1.0
@@ -29,75 +21,79 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect" type="ColorRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.00784314, 0.00784314, 0.00784314, 0.556863 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
-anchor_left = 0.212
-anchor_top = 0.398
-anchor_right = 0.788
-anchor_bottom = 0.602
-margin_left = 0.411987
-margin_top = 0.447968
-margin_right = -0.412048
-margin_bottom = -0.448059
+anchor_left = 0.004
+anchor_top = 0.312
+anchor_right = 0.996
+anchor_bottom = 0.688
+margin_left = -0.32
+margin_top = 0.959961
+margin_right = 0.319946
+margin_bottom = 0.039917
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
-margin_right = 589.0
-margin_bottom = 208.0
+margin_right = 1072.0
+margin_bottom = 721.0
 
 [node name="Score" type="Label" parent="Control/MarginContainer/VBoxContainer"]
-margin_right = 589.0
-margin_bottom = 48.0
+margin_right = 1072.0
+margin_bottom = 43.0
 custom_fonts/font = SubResource( 1 )
 text = "Score : "
 align = 1
 valign = 1
 
 [node name="high" type="Label" parent="Control/MarginContainer/VBoxContainer"]
-margin_top = 52.0
-margin_right = 589.0
-margin_bottom = 100.0
+margin_top = 47.0
+margin_right = 1072.0
+margin_bottom = 90.0
 custom_fonts/font = SubResource( 1 )
 text = "High Score : "
 align = 1
 valign = 1
 
 [node name="Score2" type="Label" parent="Control/MarginContainer/VBoxContainer"]
-margin_top = 104.0
-margin_right = 589.0
-margin_bottom = 152.0
+margin_top = 94.0
+margin_right = 1072.0
+margin_bottom = 137.0
 custom_fonts/font = SubResource( 1 )
 align = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="Control"]
-anchor_left = 0.445
-anchor_top = 0.266
-anchor_right = 0.555
-anchor_bottom = 0.369
-margin_left = -71.68
-margin_top = -0.384003
-margin_right = 71.68
-margin_bottom = 0.143982
+anchor_bottom = 1.0
+margin_right = 112.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer2"]
-margin_right = 256.0
-margin_bottom = 106.0
-
-[node name="Replay" type="Button" parent="Control/MarginContainer2/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer2"]
 margin_right = 112.0
-margin_bottom = 106.0
+margin_bottom = 1920.0
+alignment = 1
+
+[node name="Replay" type="Button" parent="Control/MarginContainer2/VBoxContainer"]
+margin_top = 852.0
+margin_right = 112.0
+margin_bottom = 958.0
 icon = ExtResource( 1 )
 flat = true
 
-[node name="MainMenu" type="Button" parent="Control/MarginContainer2/HBoxContainer"]
-margin_left = 116.0
-margin_right = 228.0
-margin_bottom = 106.0
+[node name="MainMenu" type="Button" parent="Control/MarginContainer2/VBoxContainer"]
+margin_top = 962.0
+margin_right = 112.0
+margin_bottom = 1068.0
 icon = ExtResource( 4 )
 flat = true
-[connection signal="pressed" from="Control/MarginContainer2/HBoxContainer/Replay" to="." method="_on_Replay_pressed"]
-[connection signal="pressed" from="Control/MarginContainer2/HBoxContainer/MainMenu" to="." method="_on_MainMenu_pressed"]
+[connection signal="pressed" from="Control/MarginContainer2/VBoxContainer/Replay" to="." method="_on_Replay_pressed"]
+[connection signal="pressed" from="Control/MarginContainer2/VBoxContainer/MainMenu" to="." method="_on_MainMenu_pressed"]
