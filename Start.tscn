@@ -118,7 +118,7 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer2"]
-margin_right = 1024.0
+margin_right = 1020.0
 margin_bottom = 130.0
 color = Color( 0.0196078, 0.0196078, 0.0196078, 0.619608 )
 __meta__ = {
